@@ -1,0 +1,29 @@
+# MJPlaceholderView
+
+[![CI Status](https://img.shields.io/travis/jgyhc/MJPlaceholderView.svg?style=flat)](https://travis-ci.org/jgyhc/MJPlaceholderView)
+[![Version](https://img.shields.io/cocoapods/v/MJPlaceholderView.svg?style=flat)](https://cocoapods.org/pods/MJPlaceholderView)
+[![License](https://img.shields.io/cocoapods/l/MJPlaceholderView.svg?style=flat)](https://cocoapods.org/pods/MJPlaceholderView)
+[![Platform](https://img.shields.io/cocoapods/p/MJPlaceholderView.svg?style=flat)](https://cocoapods.org/pods/MJPlaceholderView)
+
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Requirements
+
+## Installation
+
+MJPlaceholderView is available through [CocoaPods](https://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'MJPlaceholderView'
+```
+
+## Author
+
+jgyhc, jgyhc@foxmail.com.com
+
+## License
+
+MJPlaceholderView is available under the MIT license. See the LICENSE file for more info.
