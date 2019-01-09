@@ -62,10 +62,6 @@ static NSString *placeholderViewKey = @"placeholderViewKey";
     }
     [self addSubview:self.placeholderView];
     self.placeholderView.frame = self.bounds;
-    //    [self.placeholderView mas_makeConstraints:^(MASConstraintMaker *make) {
-    //        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
-    //    }];
-    //    [self.placeholderView layoutIfNeeded];
     [self.placeholderView reloadData];
 }
 

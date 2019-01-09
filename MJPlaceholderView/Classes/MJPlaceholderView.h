@@ -55,7 +55,7 @@ typedef NS_ENUM(NSInteger, MJPlaceholderViewType) {
  "title": "标题",
  "subTitle": "副标题",
  "buttonTitle": "按钮标题",
- "imageName":"图片名称"
+ "image":"UIImage"
  } */
 @property (nonatomic, strong) NSDictionary * noDataPlacehoderParam;
 

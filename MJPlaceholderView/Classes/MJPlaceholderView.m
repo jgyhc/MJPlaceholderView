@@ -47,7 +47,6 @@
     [self reloadData];
 }
 
-
 - (instancetype)init {
     self = [super init];
     if (self) {
@@ -169,9 +168,9 @@
         self.goButton.hidden = YES;
     }
     
-    NSString *imageName = [params objectForKey:@"imageName"];
-    if (imageName && [imageName isKindOfClass:[NSString class]] && imageName.length > 0) {
-        self.imageView.image = [YYImage imageNamed:imageName];
+    UIImage *image = [params objectForKey:@"image"];
+    if (image && [image isKindOfClass:[UIImage class]]) {
+        self.imageView.image = image;
     }
 }
 

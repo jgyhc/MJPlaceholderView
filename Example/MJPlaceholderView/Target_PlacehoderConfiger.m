@@ -48,7 +48,7 @@
     return @{@"title": @"网络走丢了",
              @"buttonTitle": @"点击重试",
              @"subTitle": @"",
-             @"imageName": @"WX20190109-143138"
+             @"image": [UIImage imageNamed:@"WX20190109-143138"]
              };
 }
 
@@ -56,7 +56,7 @@
     return @{@"title": @"没有数据",
              @"buttonTitle": @"点击重试",
              @"subTitle": @"",
-             @"imageName": @"WX20190109-143510"
+             @"image": [UIImage imageNamed:@"WX20190109-143510"]
              };
 }
 
@@ -64,7 +64,7 @@
     return @{@"title": @"",
              @"buttonTitle": @"",
              @"subTitle": @"",
-             @"imageName": @"10dba6ac0679e4c11cb95f93bc375c45c9c624e59a86-KPUDlr_fw658.gif"
+             @"image": [YYImage imageNamed:@"10dba6ac0679e4c11cb95f93bc375c45c9c624e59a86-KPUDlr_fw658.gif"]
              };
 }
 
