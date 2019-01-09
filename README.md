@@ -7,7 +7,7 @@
 
 实现思路：交换了`tableView`和`collectionView`的`reloadData`方法，另外还加入了没有网络情况的占位图和页面加载中的占位图！
 
-最简单的时候，`self.collectionView.placeholderView = [MJPlaceholderView placeholder];`就可以适用了。
+最简单的时候，`self.collectionView.placeholderView = [MJPlaceholderView placeholder];`就可以使用了。
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
