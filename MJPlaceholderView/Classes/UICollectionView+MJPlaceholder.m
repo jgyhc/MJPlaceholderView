@@ -8,6 +8,7 @@
 #import "UICollectionView+MJPlaceholder.h"
 #import <objc/runtime.h>
 #import <Masonry/Masonry.h>
+#import <Aspects/Aspects.h>
 
 static NSString *placeholderViewKey = @"placeholderViewKey";
 @implementation UICollectionView (MJPlaceholder)
@@ -18,52 +19,24 @@ static NSString *placeholderViewKey = @"placeholderViewKey";
             [self.placeholderView removeFromSuperview];
         }
         objc_setAssociatedObject(self, &placeholderViewKey, placeholderView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+        Class class = [self class];
+        SEL selectors[3] = {
+            @selector(deleteSections:),
+            @selector(reloadData),
+            @selector(deleteItemsAtIndexPaths:)
+        };
+        for (NSInteger i = 0; i < 3; i ++) {
+            SEL selector = selectors[i];
+            [class aspect_hookSelector:selector withOptions:AspectPositionAfter usingBlock:^{
+                [self mj_logicalProcessing];
+            } error:nil];
+        }
         [self mj_logicalProcessing];
     }
 }
 
 - (MJPlaceholderView *)placeholderView {
     return  objc_getAssociatedObject(self, &placeholderViewKey);
-}
-
-+ (void)load {
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        NSArray *selStringsArray = @[@"reloadData", @"deleteSections:", @"deleteItemsAtIndexPaths:"];
-        [selStringsArray enumerateObjectsUsingBlock:^(NSString *selString, NSUInteger idx, BOOL *stop) {
-            NSString *leeSelString = [@"mj_" stringByAppendingString:selString];
-            Method originalMethod = class_getInstanceMethod(self, NSSelectorFromString(selString));
-            Method leeMethod = class_getInstanceMethod(self, NSSelectorFromString(leeSelString));
-            method_exchangeImplementations(originalMethod, leeMethod);
-        }];
-    });
-}
-
-- (void)mj_deleteItemsAtIndexPaths:(NSArray<NSIndexPath *> *)indexPaths {
-    if (!self.placeholderView) {
-        [self mj_deleteItemsAtIndexPaths:indexPaths];
-        return;
-    }
-    [self mj_logicalProcessing];
-    [self mj_deleteItemsAtIndexPaths:indexPaths];
-}
-
-- (void)mj_deleteSections:(NSIndexSet *)sections {
-    if (!self.placeholderView) {
-        [self mj_deleteSections:sections];
-        return;
-    }
-    [self mj_logicalProcessing];
-    [self mj_deleteSections:sections];
-}
-
-- (void)mj_reloadData {
-    if (!self.placeholderView) {
-        [self mj_reloadData];
-        return;
-    }
-    [self mj_logicalProcessing];
-    [self mj_reloadData];
 }
 
 - (void)mj_logicalProcessing {

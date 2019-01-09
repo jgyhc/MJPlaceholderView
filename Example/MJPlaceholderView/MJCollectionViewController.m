@@ -12,6 +12,7 @@
 @interface MJCollectionViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
+@property (nonatomic, assign) NSInteger sections;
 @end
 
 @implementation MJCollectionViewController
@@ -20,10 +21,13 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    _sections = 0;
     self.collectionView.placeholderView = [MJPlaceholderView placeholder];
     [self.collectionView.placeholderView placeholderStartLoading];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        _sections = 3;
         [self.collectionView.placeholderView placeholderEndLoading];
+        [self.collectionView reloadData];
     });
 }
 
@@ -45,7 +49,7 @@ static NSString * const reuseIdentifier = @"Cell";
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Register cell classes
-//    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
     
     // Do any additional setup after loading the view.
 }
@@ -64,13 +68,13 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
 #warning Incomplete implementation, return the number of sections
-    return 0;
+    return _sections;
 }
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of items
-    return 0;
+    return 2;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {

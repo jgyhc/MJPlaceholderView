@@ -7,13 +7,27 @@
 //
 
 #import "MJTableViewController.h"
+#import "MJPlaceholder.h"
 
 @interface MJTableViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
+@property (nonatomic, assign) NSInteger sections;
 @end
 
 @implementation MJTableViewController
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    _sections = 3;
+    self.tableView.placeholderView = [MJPlaceholderView placeholder];
+    [self.tableView.placeholderView placeholderStartLoading];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        _sections = 0;
+        [self.tableView.placeholderView placeholderEndLoading];
+        [self.tableView reloadData];
+    });
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,11 +44,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return _sections;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MJPlaceholderView'
-  s.version          = '1.2.0'
+  s.version          = '1.3.0'
   s.summary          = '一个用于tableView和collectionView空页面占位控件'
 
 # This description is used to generate tags and improve search results.
@@ -42,4 +42,5 @@ Pod::Spec.new do |s|
     s.dependency 'Masonry'
     s.dependency 'YYImage'
     s.dependency 'CTMediator'
+    s.dependency 'Aspects'
 end
