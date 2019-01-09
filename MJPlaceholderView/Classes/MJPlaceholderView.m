@@ -25,6 +25,8 @@
 @property (nonatomic, strong) UIButton *goButton;
 
 @property (nonatomic, assign) BOOL reachability;
+
+@property (nonatomic, assign) BOOL isLoading;
 @end
 
 @implementation MJPlaceholderView
@@ -36,44 +38,20 @@
 }
 
 - (void)placeholderStartLoading {
-    self.type = MJPlaceholderViewTypeLoading;
+    _isLoading = YES;
+    [self reloadData];
 }
 
 - (void)placeholderEndLoading {
-    self.type = MJPlaceholderViewTypeNoData;
+    _isLoading = NO;
+    [self reloadData];
 }
 
-- (void)setType:(MJPlaceholderViewType)type {
-    if (_type == type) {
-        return;
-    }
-    if (!_reachability) {
-        _type = MJPlaceholderViewTypeNoNetwork;
-    }else {
-        _type = type;
-    }
-    switch (_type) {
-        case MJPlaceholderViewTypeLoading: {
-            [self updateViewWithParams:self.loadingPlacehoderParam];
-        }
-            break;
-        case MJPlaceholderViewTypeNoData: {
-            [self updateViewWithParams:self.noDataPlacehoderParam];
-        }
-            break;
-        case MJPlaceholderViewTypeNoNetwork: {
-            [self updateViewWithParams:self.noNetworkPlacehoderParam];
-        }
-            break;
-            
-        default:
-            break;
-    }
-}
 
 - (instancetype)init {
     self = [super init];
     if (self) {
+        _reachability = YES;//默认有网的
         [self initSubViews];
         [self netWorkChangeEvent];
     }
@@ -84,13 +62,14 @@
 - (void)netWorkChangeEvent {
     AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
     [manager startMonitoring];
+    __weak typeof(self) wself = self;
     [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         if (status == AFNetworkReachabilityStatusNotReachable) {
-            _reachability = NO;
+            wself.reachability = NO;
+            [wself reloadData];
         }else {
-            _reachability = YES;
+            wself.reachability = YES;
         }
-        self.type = MJPlaceholderViewTypeNoNetwork;
     }];
 }
 
@@ -104,7 +83,7 @@
         make.left.mas_equalTo(self.mas_left);
         make.right.mas_equalTo(self.mas_right);
         make.height.mas_equalTo(150);
-        make.centerY.mas_equalTo(self.mas_centerY).mas_offset(-100);
+        make.centerY.mas_equalTo(self.mas_centerY).mas_offset(-150);
     }];
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -133,6 +112,35 @@
     }
     if (self.didSelectButtonPlaceholderViewBlock) {
         self.didSelectButtonPlaceholderViewBlock(self);
+    }
+}
+
+- (void)reloadData {
+    if (!_reachability) {
+        _type = MJPlaceholderViewTypeNoNetwork;
+    }else {
+        if (_isLoading) {
+            _type = MJPlaceholderViewTypeLoading;
+        }else {
+            _type = MJPlaceholderViewTypeNoData;
+        }
+    }
+    switch (_type) {
+        case MJPlaceholderViewTypeLoading: {
+            [self updateViewWithParams:self.loadingPlacehoderParam];
+        }
+            break;
+        case MJPlaceholderViewTypeNoData: {
+            [self updateViewWithParams:self.noDataPlacehoderParam];
+        }
+            break;
+        case MJPlaceholderViewTypeNoNetwork: {
+            [self updateViewWithParams:self.noNetworkPlacehoderParam];
+        }
+            break;
+            
+        default:
+            break;
     }
 }
 

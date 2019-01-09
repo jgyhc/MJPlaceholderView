@@ -1,8 +1,8 @@
 //
-//  UIScrollView+MJPlacehoder.h
-//  FBSnapshotTestCase
+//  UICollectionView+MJPlaceholder.h
+//  AFNetworking
 //
-//  Created by manjiwang on 2019/1/8.
+//  Created by manjiwang on 2019/1/9.
 //
 
 #import <UIKit/UIKit.h>
@@ -10,14 +10,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIScrollView (MJPlacehoder)
-
-
-
-
+@interface UICollectionView (MJPlaceholder)
 
 /** 这里没有自定义的话  就默认MJPlaceholderView */
 @property (nonatomic, strong) MJPlaceholderView *placeholderView;
+
 
 @end
 

@@ -43,6 +43,8 @@ typedef NS_ENUM(NSInteger, MJPlaceholderViewType) {
 
 - (void)placeholderEndLoading;
 
+- (void)reloadData;
+
 @property (nonatomic, weak) id <MJPlaceholderViewDelegate> delegate;
 
 @property (nonatomic, copy) void (^didSelectButtonPlaceholderViewBlock)(MJPlaceholderView *placeholderView);

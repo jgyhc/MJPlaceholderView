@@ -10,8 +10,10 @@
 #endif
 #endif
 
+#import "MJPlaceholder.h"
 #import "MJPlaceholderView.h"
-#import "UIScrollView+MJPlacehoder.h"
+#import "UICollectionView+MJPlaceholder.h"
+#import "UITableView+MJPlaceholder.h"
 
 FOUNDATION_EXPORT double MJPlaceholderViewVersionNumber;
 FOUNDATION_EXPORT const unsigned char MJPlaceholderViewVersionString[];

@@ -1,42 +1,35 @@
 //
-//  UIScrollView+MJPlacehoder.m
-//  FBSnapshotTestCase
+//  UITableView+MJPlaceholder.m
+//  AFNetworking
 //
-//  Created by manjiwang on 2019/1/8.
+//  Created by manjiwang on 2019/1/9.
 //
 
-#import "UIScrollView+MJPlacehoder.h"
+#import "UITableView+MJPlaceholder.h"
 #import <objc/runtime.h>
+#import <Masonry/Masonry.h>
 
 static NSString *placeholderViewKey = @"placeholderViewKey";
-
-@implementation UIScrollView (MJPlacehoder)
+@implementation UITableView (MJPlaceholder)
 
 - (void)setPlaceholderView:(MJPlaceholderView *)placeholderView {
     if (placeholderView != self.placeholderView) {
+        if (self.placeholderView) {
+            [self.placeholderView removeFromSuperview];
+        }
         objc_setAssociatedObject(self, &placeholderViewKey, placeholderView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
         [self mj_logicalProcessing];
     }
 }
 
 - (MJPlaceholderView *)placeholderView {
-    MJPlaceholderView *view = objc_getAssociatedObject(self, &placeholderViewKey);
-    if (!view) {
-        view = [[MJPlaceholderView alloc] init];
-        objc_setAssociatedObject(self, &placeholderViewKey, view, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-    return view;
+    return objc_getAssociatedObject(self, &placeholderViewKey);
 }
 
 + (void)load {
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSArray *selStringsArray;
-        if ([[self class] isKindOfClass:[UITableView class]]) {
-            selStringsArray = @[@"reloadData", @"deleteSections:", @"deleteRowsAtIndexPaths:withRowAnimation:", @"deleteItemsAtIndexPaths:"];
-        }else if ([[self class] isKindOfClass:[UICollectionView class]]) {
-            selStringsArray = @[@"reloadData", @"deleteSections:", @"deleteItemsAtIndexPaths:"];
-        }
+        NSArray *selStringsArray = @[@"reloadData", @"deleteSections:", @"deleteRowsAtIndexPaths:withRowAnimation:", @"deleteItemsAtIndexPaths:"];
         [selStringsArray enumerateObjectsUsingBlock:^(NSString *selString, NSUInteger idx, BOOL *stop) {
             NSString *leeSelString = [@"mj_" stringByAppendingString:selString];
             Method originalMethod = class_getInstanceMethod(self, NSSelectorFromString(selString));
@@ -83,10 +76,6 @@ static NSString *placeholderViewKey = @"placeholderViewKey";
 }
 
 - (void)mj_logicalProcessing {
-    NSString * classString = NSStringFromClass(self.class);
-    if (![classString isEqualToString:@"UITableView"] && ![classString isEqualToString:@"UICollectionView"]) {
-        return;
-    }
     NSUInteger sections = [self numberOfSectionsInScrollView];
     if (sections == 0) {
         [self addPlaceholderView];
@@ -106,8 +95,13 @@ static NSString *placeholderViewKey = @"placeholderViewKey";
     if (!self.placeholderView) {
         self.placeholderView = [[MJPlaceholderView alloc] init];
     }
-    self.placeholderView.frame = self.bounds;
     [self addSubview:self.placeholderView];
+    self.placeholderView.frame = self.bounds;
+    //    [self.placeholderView mas_makeConstraints:^(MASConstraintMaker *make) {
+    //        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+    //    }];
+    //    [self.placeholderView layoutIfNeeded];
+    [self.placeholderView reloadData];
 }
 
 - (void)removePlaceholderView  {
@@ -116,36 +110,18 @@ static NSString *placeholderViewKey = @"placeholderViewKey";
 
 - (NSUInteger)numberOfSectionsInScrollView {
     NSUInteger sections = 1;
-    NSString * classString = NSStringFromClass(self.class);
-    if ([classString isEqualToString:@"UITableView"]) {
-        UITableView *tableView = (UITableView *)self;
-        if (tableView.dataSource && [tableView.dataSource respondsToSelector:@selector(numberOfSectionsInTableView:)]) {
-            sections = [tableView.dataSource numberOfSectionsInTableView:tableView];
-        }
-    }
-    if ([classString isEqualToString:@"UICollectionView"]) {
-        UICollectionView *collectionView = (UICollectionView *)self;
-        if (collectionView.dataSource && [collectionView.dataSource respondsToSelector:@selector(numberOfSectionsInCollectionView:)]) {
-            sections = [collectionView.dataSource numberOfSectionsInCollectionView:collectionView];
-        }
+    UITableView *tableView = (UITableView *)self;
+    if (tableView.dataSource && [tableView.dataSource respondsToSelector:@selector(numberOfSectionsInTableView:)]) {
+        sections = [tableView.dataSource numberOfSectionsInTableView:tableView];
     }
     return sections;
 }
 
 - (NSUInteger)numberOfRowsInSection0 {
     NSUInteger rows = 0;
-    NSString * classString = NSStringFromClass(self.class);
-    if ([classString isEqualToString:@"UITableView"]) {
-        UITableView *tableView = (UITableView *)self;
-        if (tableView.dataSource && [tableView.dataSource respondsToSelector:@selector(tableView:numberOfRowsInSection:)]) {
-            rows = [tableView.dataSource tableView:tableView numberOfRowsInSection:0];
-        }
-    }
-    if ([classString isEqualToString:@"UICollectionView"]) {
-        UICollectionView *collectionView = (UICollectionView *)self;
-        if (collectionView.dataSource && [collectionView.dataSource respondsToSelector:@selector(collectionView:numberOfItemsInSection:)]) {
-            rows = [collectionView.dataSource collectionView:collectionView numberOfItemsInSection:0];
-        }
+    UITableView *tableView = (UITableView *)self;
+    if (tableView.dataSource && [tableView.dataSource respondsToSelector:@selector(tableView:numberOfRowsInSection:)]) {
+        rows = [tableView.dataSource tableView:tableView numberOfRowsInSection:0];
     }
     return rows;
 }

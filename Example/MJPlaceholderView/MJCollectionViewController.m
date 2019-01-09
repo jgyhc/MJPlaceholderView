@@ -7,7 +7,7 @@
 //
 
 #import "MJCollectionViewController.h"
-#import "UIScrollView+MJPlacehoder.h"
+#import "MJPlaceholder.h"
 
 @interface MJCollectionViewController ()
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -18,11 +18,18 @@
 
 static NSString * const reuseIdentifier = @"Cell";
 
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.collectionView.placeholderView = [MJPlaceholderView placeholder];
+    [self.collectionView.placeholderView placeholderStartLoading];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self.collectionView.placeholderView placeholderEndLoading];
+    });
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    MJPlaceholderView *view = [MJPlaceholderView placeholder];
-    self.collectionView.placeholderView = view;
 //    view.placehoderParam = @{
 //        @"title": @"标题",
 //        @"subTitle": @"副标题",
@@ -32,10 +39,7 @@ static NSString * const reuseIdentifier = @"Cell";
 //        };
     
     
-    [view placeholderStartLoading];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [view placeholderEndLoading];
-    });
+
     
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;

@@ -22,7 +22,6 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
-		7E4E0C3A21E4A1F60047261E /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4E0C3921E4A1F60047261E /* BaseNavigationController.m */; };
 		7E4E0C3F21E4AAC00047261E /* MJCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4E0C3B21E4AAC00047261E /* MJCollectionViewController.m */; };
 		7E4E0C4021E4AAC00047261E /* MJTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4E0C3E21E4AAC00047261E /* MJTableViewController.m */; };
 		7E88A71021E581E7003B97AB /* remind_empty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E88A70E21E581E6003B97AB /* remind_empty@3x.png */; };
@@ -69,8 +68,6 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		7E4E0C3821E4A1F60047261E /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
-		7E4E0C3921E4A1F60047261E /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
 		7E4E0C3B21E4AAC00047261E /* MJCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCollectionViewController.m; sourceTree = "<group>"; };
 		7E4E0C3C21E4AAC00047261E /* MJTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTableViewController.h; sourceTree = "<group>"; };
 		7E4E0C3D21E4AAC00047261E /* MJCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCollectionViewController.h; sourceTree = "<group>"; };
@@ -159,8 +156,6 @@
 				7E88A71221E59D35003B97AB /* 10dba6ac0679e4c11cb95f93bc375c45c9c624e59a86-KPUDlr_fw658.gif */,
 				7E88A70F21E581E6003B97AB /* remind_empty@2x.png */,
 				7E88A70E21E581E6003B97AB /* remind_empty@3x.png */,
-				7E4E0C3821E4A1F60047261E /* BaseNavigationController.h */,
-				7E4E0C3921E4A1F60047261E /* BaseNavigationController.m */,
 				6003F59C195388D20070C39A /* MJAppDelegate.h */,
 				6003F59D195388D20070C39A /* MJAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -425,7 +420,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E4E0C3A21E4A1F60047261E /* BaseNavigationController.m in Sources */,
 				7E4E0C3F21E4AAC00047261E /* MJCollectionViewController.m in Sources */,
 				7E88A71621E5C83D003B97AB /* Target_PlacehoderConfiger.m in Sources */,
 				7E4E0C4021E4AAC00047261E /* MJTableViewController.m in Sources */,

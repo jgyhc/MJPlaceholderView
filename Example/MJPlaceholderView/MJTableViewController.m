@@ -7,7 +7,6 @@
 //
 
 #import "MJTableViewController.h"
-#import "UIScrollView+MJPlacehoder.h"
 
 @interface MJTableViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
