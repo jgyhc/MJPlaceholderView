@@ -19,7 +19,6 @@ static NSString *placeholderViewKey = @"placeholderViewKey";
             [self.placeholderView removeFromSuperview];
         }
         objc_setAssociatedObject(self, &placeholderViewKey, placeholderView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-        Class class = [self class];
         SEL selectors[4] = {
             @selector(deleteSections:),
             @selector(reloadData),
@@ -28,7 +27,7 @@ static NSString *placeholderViewKey = @"placeholderViewKey";
         };
         for (NSInteger i = 0; i < 4; i ++) {
             SEL selector = selectors[i];
-            [class aspect_hookSelector:selector withOptions:AspectPositionAfter usingBlock:^{
+            [self aspect_hookSelector:selector withOptions:AspectPositionAfter usingBlock:^{
                 [self mj_logicalProcessing];
             } error:nil];
         }
