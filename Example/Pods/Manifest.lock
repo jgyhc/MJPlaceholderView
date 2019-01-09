@@ -1,0 +1,59 @@
+PODS:
+  - AFNetworking (3.2.1):
+    - AFNetworking/NSURLSession (= 3.2.1)
+    - AFNetworking/Reachability (= 3.2.1)
+    - AFNetworking/Security (= 3.2.1)
+    - AFNetworking/Serialization (= 3.2.1)
+    - AFNetworking/UIKit (= 3.2.1)
+  - AFNetworking/NSURLSession (3.2.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.2.1)
+  - AFNetworking/Security (3.2.1)
+  - AFNetworking/Serialization (3.2.1)
+  - AFNetworking/UIKit (3.2.1):
+    - AFNetworking/NSURLSession
+  - CTMediator (25)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - Masonry (1.1.0)
+  - MJPlaceholderView (1.0.0):
+    - AFNetworking
+    - CTMediator
+    - Masonry
+    - YYImage
+  - YYImage (1.0.4):
+    - YYImage/Core (= 1.0.4)
+  - YYImage/Core (1.0.4)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - MJPlaceholderView (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AFNetworking
+    - CTMediator
+    - FBSnapshotTestCase
+    - Masonry
+    - YYImage
+
+EXTERNAL SOURCES:
+  MJPlaceholderView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
+  CTMediator: 830c1fc204b3a6abf2a059510c7380f56343da0f
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJPlaceholderView: b8b9388e5fca334c94bbfd6699cb9292c05a53b8
+  YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
+
+PODFILE CHECKSUM: c85a43b21e40446438727fb387fb74825213e14a
+
+COCOAPODS: 1.5.3

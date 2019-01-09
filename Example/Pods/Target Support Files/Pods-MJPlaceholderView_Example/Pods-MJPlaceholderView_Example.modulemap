@@ -1,0 +1,6 @@
+framework module Pods_MJPlaceholderView_Example {
+  umbrella header "Pods-MJPlaceholderView_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

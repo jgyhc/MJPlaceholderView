@@ -1,0 +1,6 @@
+framework module MJPlaceholderView {
+  umbrella header "MJPlaceholderView-umbrella.h"
+
+  export *
+  module * { export * }
+}

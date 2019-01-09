@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MJPlaceholderView'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of MJPlaceholderView.'
+  s.version          = '1.0.0'
+  s.summary          = '一个用于tableView和collectionView空页面占位控件'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+一个用于tableView和collectionView空页面占位控件，逻辑非常简单！但是应该还有问题！后面慢慢优化吧~
                        DESC
 
   s.homepage         = 'https://github.com/jgyhc/MJPlaceholderView'
@@ -38,5 +38,8 @@ TODO: Add long description of the pod here.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+    s.dependency 'AFNetworking'
+    s.dependency 'Masonry'
+    s.dependency 'YYImage'
+    s.dependency 'CTMediator'
 end

@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface MJViewController : UIViewController
+@interface MJViewController : UITabBarController
 
 @end

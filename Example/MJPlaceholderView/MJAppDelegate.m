@@ -7,14 +7,20 @@
 //
 
 #import "MJAppDelegate.h"
+#import <AFNetworking/AFNetworking.h>
 
 @implementation MJAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+    
+    [manager startMonitoring];
+    
     return YES;
 }
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

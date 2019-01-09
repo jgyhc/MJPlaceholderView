@@ -22,6 +22,15 @@
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
+		7E4E0C3A21E4A1F60047261E /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4E0C3921E4A1F60047261E /* BaseNavigationController.m */; };
+		7E4E0C3F21E4AAC00047261E /* MJCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4E0C3B21E4AAC00047261E /* MJCollectionViewController.m */; };
+		7E4E0C4021E4AAC00047261E /* MJTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4E0C3E21E4AAC00047261E /* MJTableViewController.m */; };
+		7E88A71021E581E7003B97AB /* remind_empty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E88A70E21E581E6003B97AB /* remind_empty@3x.png */; };
+		7E88A71121E581E7003B97AB /* remind_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E88A70F21E581E6003B97AB /* remind_empty@2x.png */; };
+		7E88A71321E59D35003B97AB /* 10dba6ac0679e4c11cb95f93bc375c45c9c624e59a86-KPUDlr_fw658.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7E88A71221E59D35003B97AB /* 10dba6ac0679e4c11cb95f93bc375c45c9c624e59a86-KPUDlr_fw658.gif */; };
+		7E88A71621E5C83D003B97AB /* Target_PlacehoderConfiger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E88A71521E5C83D003B97AB /* Target_PlacehoderConfiger.m */; };
+		7E88A71821E5CCEC003B97AB /* WX20190109-143138@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E88A71721E5CCEC003B97AB /* WX20190109-143138@2x.png */; };
+		7E88A71A21E5CDAB003B97AB /* WX20190109-143510@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E88A71921E5CDAB003B97AB /* WX20190109-143510@2x.png */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		A1A48839CEE99E02ABDD0F8C /* Pods_MJPlaceholderView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A288572183BCD03E353072 /* Pods_MJPlaceholderView_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -38,7 +47,7 @@
 
 /* Begin PBXFileReference section */
 		061ECC64D757A057F5D87C42 /* Pods-MJPlaceholderView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJPlaceholderView_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MJPlaceholderView_Tests/Pods-MJPlaceholderView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		25E2550C4DA8C6C8EDD9CE0A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		25E2550C4DA8C6C8EDD9CE0A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		2A3893D1B39A536B0243CCDC /* Pods-MJPlaceholderView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJPlaceholderView_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MJPlaceholderView_Tests/Pods-MJPlaceholderView_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* MJPlaceholderView_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MJPlaceholderView_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -60,12 +69,25 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7E4E0C3821E4A1F60047261E /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
+		7E4E0C3921E4A1F60047261E /* BaseNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseNavigationController.m; sourceTree = "<group>"; };
+		7E4E0C3B21E4AAC00047261E /* MJCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJCollectionViewController.m; sourceTree = "<group>"; };
+		7E4E0C3C21E4AAC00047261E /* MJTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTableViewController.h; sourceTree = "<group>"; };
+		7E4E0C3D21E4AAC00047261E /* MJCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCollectionViewController.h; sourceTree = "<group>"; };
+		7E4E0C3E21E4AAC00047261E /* MJTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTableViewController.m; sourceTree = "<group>"; };
+		7E88A70E21E581E6003B97AB /* remind_empty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "remind_empty@3x.png"; sourceTree = "<group>"; };
+		7E88A70F21E581E6003B97AB /* remind_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "remind_empty@2x.png"; sourceTree = "<group>"; };
+		7E88A71221E59D35003B97AB /* 10dba6ac0679e4c11cb95f93bc375c45c9c624e59a86-KPUDlr_fw658.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "10dba6ac0679e4c11cb95f93bc375c45c9c624e59a86-KPUDlr_fw658.gif"; sourceTree = "<group>"; };
+		7E88A71421E5C83D003B97AB /* Target_PlacehoderConfiger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Target_PlacehoderConfiger.h; sourceTree = "<group>"; };
+		7E88A71521E5C83D003B97AB /* Target_PlacehoderConfiger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_PlacehoderConfiger.m; sourceTree = "<group>"; };
+		7E88A71721E5CCEC003B97AB /* WX20190109-143138@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WX20190109-143138@2x.png"; sourceTree = "<group>"; };
+		7E88A71921E5CDAB003B97AB /* WX20190109-143510@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WX20190109-143510@2x.png"; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93A288572183BCD03E353072 /* Pods_MJPlaceholderView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MJPlaceholderView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9528D19BE76BF253BFC7D20A /* Pods-MJPlaceholderView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJPlaceholderView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MJPlaceholderView_Example/Pods-MJPlaceholderView_Example.release.xcconfig"; sourceTree = "<group>"; };
-		A9357477C0BE812EB045115D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		A9357477C0BE812EB045115D /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		B949F0167701F4F3E5751E12 /* Pods_MJPlaceholderView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MJPlaceholderView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D789AEA1260130EFB98693ED /* MJPlaceholderView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = MJPlaceholderView.podspec; path = ../MJPlaceholderView.podspec; sourceTree = "<group>"; };
+		D789AEA1260130EFB98693ED /* MJPlaceholderView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = MJPlaceholderView.podspec; path = ../MJPlaceholderView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DB57C71439EF9F9FD192E7E0 /* Pods-MJPlaceholderView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJPlaceholderView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MJPlaceholderView_Example/Pods-MJPlaceholderView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,11 +154,24 @@
 		6003F593195388D20070C39A /* Example for MJPlaceholderView */ = {
 			isa = PBXGroup;
 			children = (
+				7E88A71921E5CDAB003B97AB /* WX20190109-143510@2x.png */,
+				7E88A71721E5CCEC003B97AB /* WX20190109-143138@2x.png */,
+				7E88A71221E59D35003B97AB /* 10dba6ac0679e4c11cb95f93bc375c45c9c624e59a86-KPUDlr_fw658.gif */,
+				7E88A70F21E581E6003B97AB /* remind_empty@2x.png */,
+				7E88A70E21E581E6003B97AB /* remind_empty@3x.png */,
+				7E4E0C3821E4A1F60047261E /* BaseNavigationController.h */,
+				7E4E0C3921E4A1F60047261E /* BaseNavigationController.m */,
 				6003F59C195388D20070C39A /* MJAppDelegate.h */,
 				6003F59D195388D20070C39A /* MJAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* MJViewController.h */,
 				6003F5A6195388D20070C39A /* MJViewController.m */,
+				7E4E0C3D21E4AAC00047261E /* MJCollectionViewController.h */,
+				7E4E0C3B21E4AAC00047261E /* MJCollectionViewController.m */,
+				7E4E0C3C21E4AAC00047261E /* MJTableViewController.h */,
+				7E4E0C3E21E4AAC00047261E /* MJTableViewController.m */,
+				7E88A71421E5C83D003B97AB /* Target_PlacehoderConfiger.h */,
+				7E88A71521E5C83D003B97AB /* Target_PlacehoderConfiger.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -248,6 +283,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = jgyhc;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 75TU6G6GNQ;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -278,7 +316,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
+				7E88A71A21E5CDAB003B97AB /* WX20190109-143510@2x.png in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
+				7E88A71321E59D35003B97AB /* 10dba6ac0679e4c11cb95f93bc375c45c9c624e59a86-KPUDlr_fw658.gif in Resources */,
+				7E88A71821E5CCEC003B97AB /* WX20190109-143138@2x.png in Resources */,
+				7E88A71021E581E7003B97AB /* remind_empty@3x.png in Resources */,
+				7E88A71121E581E7003B97AB /* remind_empty@2x.png in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
@@ -302,11 +345,19 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-MJPlaceholderView_Example/Pods-MJPlaceholderView_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/CTMediator/CTMediator.framework",
 				"${BUILT_PRODUCTS_DIR}/MJPlaceholderView/MJPlaceholderView.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/YYImage/YYImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CTMediator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJPlaceholderView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YYImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -374,6 +425,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E4E0C3A21E4A1F60047261E /* BaseNavigationController.m in Sources */,
+				7E4E0C3F21E4AAC00047261E /* MJCollectionViewController.m in Sources */,
+				7E88A71621E5C83D003B97AB /* Target_PlacehoderConfiger.m in Sources */,
+				7E4E0C4021E4AAC00047261E /* MJTableViewController.m in Sources */,
 				6003F59E195388D20070C39A /* MJAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* MJViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
@@ -504,6 +559,7 @@
 			baseConfigurationReference = DB57C71439EF9F9FD192E7E0 /* Pods-MJPlaceholderView_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 75TU6G6GNQ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MJPlaceholderView/MJPlaceholderView-Prefix.pch";
 				INFOPLIST_FILE = "MJPlaceholderView/MJPlaceholderView-Info.plist";
@@ -519,6 +575,7 @@
 			baseConfigurationReference = 9528D19BE76BF253BFC7D20A /* Pods-MJPlaceholderView_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 75TU6G6GNQ;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MJPlaceholderView/MJPlaceholderView-Prefix.pch";
 				INFOPLIST_FILE = "MJPlaceholderView/MJPlaceholderView-Info.plist";
