@@ -60,6 +60,9 @@ static NSString *placeholderViewKey = @"placeholderViewKey";
         self.placeholderView = [[MJPlaceholderView alloc] init];
     }
     [self addSubview:self.placeholderView];
+    [self.placeholderView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
+    }];
     [self.placeholderView reloadData];
 }
 

@@ -27,11 +27,6 @@
 @property (nonatomic, assign) BOOL reachability;
 
 @property (nonatomic, assign) BOOL isLoading;
-
-@property (nonatomic, strong) UIScrollView * scrollView;
-
-
-
 @end
 
 @implementation MJPlaceholderView
@@ -62,26 +57,6 @@
     return self;
 }
 
-- (void)willMoveToSuperview:(UIView *)newSuperview {
-    [super willMoveToSuperview:newSuperview];
-    if (newSuperview && ![newSuperview isKindOfClass:[UIScrollView class]]) {
-        return;
-    }
-    if (newSuperview) {
-        self.scrollView = (UIScrollView *)newSuperview;
-        CGFloat topSpace = [self inset].top;
-        self.frame = CGRectMake(0, topSpace, self.scrollView.bounds.size.width, self.scrollView.bounds.size.height);
-    }
-}
-
-- (UIEdgeInsets)inset {
-    if (@available(iOS 11.0, *)) {
-        return self.scrollView.adjustedContentInset;
-    }
-    return self.scrollView.contentInset;
-}
-
-
 #pragma mark - 检测网络状态变化
 - (void)netWorkChangeEvent {
     AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
@@ -107,7 +82,7 @@
         make.left.mas_equalTo(self.mas_left);
         make.right.mas_equalTo(self.mas_right);
         make.height.mas_equalTo(150);
-        make.centerY.mas_equalTo(self.mas_centerY).mas_offset(-150);
+        make.top.mas_equalTo(self.mas_top).mas_offset(100);
     }];
     
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {

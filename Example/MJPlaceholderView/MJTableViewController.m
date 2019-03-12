@@ -22,10 +22,10 @@
     [super viewWillAppear:animated];
     _sections = 3;
     self.tableView.placeholderView = [MJPlaceholderView placeholder];
-    [self.tableView.placeholderView placeholderStartLoading];
+//    [self.tableView.placeholderView placeholderStartLoading];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         _sections = 0;
-        [self.tableView.placeholderView placeholderEndLoading];
+//        [self.tableView.placeholderView placeholderEndLoading];
         [self.tableView reloadData];
     });
 }
