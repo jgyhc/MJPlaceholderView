@@ -27,6 +27,8 @@
 @property (nonatomic, assign) BOOL reachability;
 
 @property (nonatomic, assign) BOOL isLoading;
+
+@property (nonatomic, strong) UIScrollView * scrollView;
 @end
 
 @implementation MJPlaceholderView
@@ -70,6 +72,25 @@
             wself.reachability = YES;
         }
     }];
+}
+
+- (void)willMoveToSuperview:(UIView *)newSuperview {
+    [super willMoveToSuperview:newSuperview];
+    if (newSuperview && ![newSuperview isKindOfClass:[UIScrollView class]]) {
+        return;
+    }
+    if (newSuperview) {
+        self.scrollView = (UIScrollView *)newSuperview;
+        CGFloat topSpace = [self inset].top;
+        self.frame = CGRectMake(0, topSpace, self.scrollView.bounds.size.width, self.scrollView.bounds.size.height);
+    }
+}
+
+- (UIEdgeInsets)inset {
+    if (@available(iOS 11.0, *)) {
+        return self.scrollView.adjustedContentInset;
+    }
+    return self.scrollView.contentInset;
 }
 
 - (void)initSubViews {

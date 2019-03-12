@@ -59,10 +59,9 @@ static NSString *placeholderViewKey = @"placeholderViewKey";
     if (!self.placeholderView) {
         self.placeholderView = [[MJPlaceholderView alloc] init];
     }
+    self.autoresizesSubviews = YES;
     [self addSubview:self.placeholderView];
-    [self.placeholderView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.mas_equalTo(UIEdgeInsetsMake(0, 0, 0, 0));
-    }];
+    self.placeholderView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.placeholderView reloadData];
 }
 
