@@ -24,6 +24,7 @@
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		7E4E0C3F21E4AAC00047261E /* MJCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4E0C3B21E4AAC00047261E /* MJCollectionViewController.m */; };
 		7E4E0C4021E4AAC00047261E /* MJTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E4E0C3E21E4AAC00047261E /* MJTableViewController.m */; };
+		7E714F562237875200353225 /* MJSpaceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E714F542237875200353225 /* MJSpaceTableViewController.m */; };
 		7E88A71021E581E7003B97AB /* remind_empty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E88A70E21E581E6003B97AB /* remind_empty@3x.png */; };
 		7E88A71121E581E7003B97AB /* remind_empty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E88A70F21E581E6003B97AB /* remind_empty@2x.png */; };
 		7E88A71321E59D35003B97AB /* 10dba6ac0679e4c11cb95f93bc375c45c9c624e59a86-KPUDlr_fw658.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7E88A71221E59D35003B97AB /* 10dba6ac0679e4c11cb95f93bc375c45c9c624e59a86-KPUDlr_fw658.gif */; };
@@ -72,6 +73,8 @@
 		7E4E0C3C21E4AAC00047261E /* MJTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTableViewController.h; sourceTree = "<group>"; };
 		7E4E0C3D21E4AAC00047261E /* MJCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJCollectionViewController.h; sourceTree = "<group>"; };
 		7E4E0C3E21E4AAC00047261E /* MJTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTableViewController.m; sourceTree = "<group>"; };
+		7E714F532237875200353225 /* MJSpaceTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJSpaceTableViewController.h; sourceTree = "<group>"; };
+		7E714F542237875200353225 /* MJSpaceTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJSpaceTableViewController.m; sourceTree = "<group>"; };
 		7E88A70E21E581E6003B97AB /* remind_empty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "remind_empty@3x.png"; sourceTree = "<group>"; };
 		7E88A70F21E581E6003B97AB /* remind_empty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "remind_empty@2x.png"; sourceTree = "<group>"; };
 		7E88A71221E59D35003B97AB /* 10dba6ac0679e4c11cb95f93bc375c45c9c624e59a86-KPUDlr_fw658.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "10dba6ac0679e4c11cb95f93bc375c45c9c624e59a86-KPUDlr_fw658.gif"; sourceTree = "<group>"; };
@@ -163,6 +166,8 @@
 				6003F5A6195388D20070C39A /* MJViewController.m */,
 				7E4E0C3D21E4AAC00047261E /* MJCollectionViewController.h */,
 				7E4E0C3B21E4AAC00047261E /* MJCollectionViewController.m */,
+				7E714F532237875200353225 /* MJSpaceTableViewController.h */,
+				7E714F542237875200353225 /* MJSpaceTableViewController.m */,
 				7E4E0C3C21E4AAC00047261E /* MJTableViewController.h */,
 				7E4E0C3E21E4AAC00047261E /* MJTableViewController.m */,
 				7E88A71421E5C83D003B97AB /* Target_PlacehoderConfiger.h */,
@@ -427,6 +432,7 @@
 				7E4E0C4021E4AAC00047261E /* MJTableViewController.m in Sources */,
 				6003F59E195388D20070C39A /* MJAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* MJViewController.m in Sources */,
+				7E714F562237875200353225 /* MJSpaceTableViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

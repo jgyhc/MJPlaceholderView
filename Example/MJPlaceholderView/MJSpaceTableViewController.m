@@ -1,45 +1,34 @@
 //
-//  MJTableViewController.m
+//  MJSpaceTableViewController.m
 //  MJPlaceholderView_Example
 //
-//  Created by manjiwang on 2019/1/8.
+//  Created by manjiwang on 2019/3/12.
 //  Copyright © 2019 jgyhc. All rights reserved.
 //
 
-#import "MJTableViewController.h"
-#import "MJPlaceholder.h"
 #import "MJSpaceTableViewController.h"
+#import "MJPlaceholder.h"
 
-@interface MJTableViewController ()
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@interface MJSpaceTableViewController ()
 @property (nonatomic, assign) NSInteger sections;
 @end
 
-@implementation MJTableViewController
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    _sections = 3;
-    self.tableView.placeholderView = [MJPlaceholderView placeholder];
-    [self.tableView.placeholderView placeholderStartLoading];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        _sections = 0;
-        [self.tableView.placeholderView placeholderEndLoading];
-        [self.tableView reloadData];
-    });
-}
+@implementation MJSpaceTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    self.tableView.placeholderView = [MJPlaceholderView placeholder];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    [self.tableView registerClass:NSClassFromString(@"UITableViewCell") forCellReuseIdentifier:@"UITableViewCell"];
-//    self.tableView.isAddPlaceholderView = YES;
+    _sections = 0;
+//    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        _sections = 0;
+//        [self.tableView reloadData];
+//    });
 }
 
 #pragma mark - Table view data source
@@ -49,19 +38,15 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 2;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
-    cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
-    [cell setBackgroundColor:[UIColor redColor]];
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%0.2ld", (long)indexPath.row];
+    
     return cell;
-}
-
-- (IBAction)handleEvent:(id)sender {
-    MJSpaceTableViewController *spacevc = [[MJSpaceTableViewController alloc] init];
-    [self.navigationController pushViewController:spacevc animated:YES];
 }
 
 /*

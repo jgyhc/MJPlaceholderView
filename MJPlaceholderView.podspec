@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MJPlaceholderView'
-  s.version          = '1.5.0'
+  s.version          = '1.5.1'
   s.summary          = '一个用于tableView和collectionView空页面占位控件'
 
 # This description is used to generate tags and improve search results.

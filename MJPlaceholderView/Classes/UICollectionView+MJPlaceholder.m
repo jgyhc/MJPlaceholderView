@@ -59,7 +59,6 @@ static NSString *placeholderViewKey = @"placeholderViewKey";
         self.placeholderView = [[MJPlaceholderView alloc] init];
     }
     [self addSubview:self.placeholderView];
-    self.placeholderView.frame = self.bounds;
     [self.placeholderView reloadData];
 }
 
