@@ -60,6 +60,7 @@ static NSString *placeholderViewKey = @"placeholderViewKey";
     }
     self.autoresizesSubviews = YES;
     [self addSubview:self.placeholderView];
+    [self sendSubviewToBack:self.placeholderView];
     self.placeholderView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.placeholderView reloadData];
 }

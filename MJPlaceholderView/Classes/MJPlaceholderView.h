@@ -63,6 +63,12 @@ typedef NS_ENUM(NSInteger, MJPlaceholderViewType) {
 
 @property (nonatomic, strong) NSDictionary * loadingPlacehoderParam;
 
+
+
+
+//tableView头部的存在应该影响placeholderView的位置
+@property (nonatomic, assign) CGFloat headerHeader;
+
 @end
 
 

@@ -17,7 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.placeholderView = [MJPlaceholderView placeholder];
+
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -29,6 +29,18 @@
 //        _sections = 0;
 //        [self.tableView reloadData];
 //    });
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    button.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 100);
+    [button setBackgroundColor:[UIColor redColor]];
+    [button addTarget:self action:@selector(handlerEvent:) forControlEvents:UIControlEventTouchUpInside];
+    self.tableView.tableHeaderView = button;
+    
+    self.tableView.placeholderView = [MJPlaceholderView placeholder];
+}
+
+- (void)handlerEvent:(id)sender {
+    NSLog(@"__");
 }
 
 #pragma mark - Table view data source

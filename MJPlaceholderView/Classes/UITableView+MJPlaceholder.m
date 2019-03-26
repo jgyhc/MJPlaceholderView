@@ -7,7 +7,6 @@
 
 #import "UITableView+MJPlaceholder.h"
 #import <objc/runtime.h>
-#import <Masonry/Masonry.h>
 #import <Aspects/Aspects.h>
 
 static NSString *placeholderViewKey = @"placeholderViewKey";
@@ -60,7 +59,9 @@ static NSString *placeholderViewKey = @"placeholderViewKey";
         self.placeholderView = [[MJPlaceholderView alloc] init];
     }
     self.autoresizesSubviews = YES;
+    self.placeholderView.headerHeader = CGRectGetHeight(self.tableHeaderView.bounds);
     [self addSubview:self.placeholderView];
+    [self sendSubviewToBack:self.placeholderView];
     self.placeholderView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.placeholderView reloadData];
 }
