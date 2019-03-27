@@ -31,6 +31,7 @@
 		7E88A71621E5C83D003B97AB /* Target_PlacehoderConfiger.m in Sources */ = {isa = PBXBuildFile; fileRef = 7E88A71521E5C83D003B97AB /* Target_PlacehoderConfiger.m */; };
 		7E88A71821E5CCEC003B97AB /* WX20190109-143138@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E88A71721E5CCEC003B97AB /* WX20190109-143138@2x.png */; };
 		7E88A71A21E5CDAB003B97AB /* WX20190109-143510@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7E88A71921E5CDAB003B97AB /* WX20190109-143510@2x.png */; };
+		7ECC590C224B1EBF00E1669C /* MJSubTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ECC590B224B1EBF00E1669C /* MJSubTableViewController.m */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		A1A48839CEE99E02ABDD0F8C /* Pods_MJPlaceholderView_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93A288572183BCD03E353072 /* Pods_MJPlaceholderView_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -82,6 +83,8 @@
 		7E88A71521E5C83D003B97AB /* Target_PlacehoderConfiger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Target_PlacehoderConfiger.m; sourceTree = "<group>"; };
 		7E88A71721E5CCEC003B97AB /* WX20190109-143138@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WX20190109-143138@2x.png"; sourceTree = "<group>"; };
 		7E88A71921E5CDAB003B97AB /* WX20190109-143510@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WX20190109-143510@2x.png"; sourceTree = "<group>"; };
+		7ECC590A224B1EBF00E1669C /* MJSubTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJSubTableViewController.h; sourceTree = "<group>"; };
+		7ECC590B224B1EBF00E1669C /* MJSubTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJSubTableViewController.m; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93A288572183BCD03E353072 /* Pods_MJPlaceholderView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MJPlaceholderView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9528D19BE76BF253BFC7D20A /* Pods-MJPlaceholderView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MJPlaceholderView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-MJPlaceholderView_Example/Pods-MJPlaceholderView_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -170,6 +173,8 @@
 				7E714F542237875200353225 /* MJSpaceTableViewController.m */,
 				7E4E0C3C21E4AAC00047261E /* MJTableViewController.h */,
 				7E4E0C3E21E4AAC00047261E /* MJTableViewController.m */,
+				7ECC590A224B1EBF00E1669C /* MJSubTableViewController.h */,
+				7ECC590B224B1EBF00E1669C /* MJSubTableViewController.m */,
 				7E88A71421E5C83D003B97AB /* Target_PlacehoderConfiger.h */,
 				7E88A71521E5C83D003B97AB /* Target_PlacehoderConfiger.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
@@ -432,6 +437,7 @@
 				7E4E0C4021E4AAC00047261E /* MJTableViewController.m in Sources */,
 				6003F59E195388D20070C39A /* MJAppDelegate.m in Sources */,
 				6003F5A7195388D20070C39A /* MJViewController.m in Sources */,
+				7ECC590C224B1EBF00E1669C /* MJSubTableViewController.m in Sources */,
 				7E714F562237875200353225 /* MJSpaceTableViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

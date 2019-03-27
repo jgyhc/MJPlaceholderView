@@ -8,6 +8,7 @@
 
 #import "MJTableViewController.h"
 #import "MJPlaceholder.h"
+#import "MJSubTableViewController.h"
 #import "MJSpaceTableViewController.h"
 
 @interface MJTableViewController ()
@@ -40,6 +41,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.tableView registerClass:NSClassFromString(@"UITableViewCell") forCellReuseIdentifier:@"UITableViewCell"];
 //    self.tableView.isAddPlaceholderView = YES;
+    
 }
 
 #pragma mark - Table view data source
@@ -60,7 +62,9 @@
 }
 
 - (IBAction)handleEvent:(id)sender {
-    MJSpaceTableViewController *spacevc = [[MJSpaceTableViewController alloc] init];
+    
+    
+    MJSubTableViewController *spacevc = [[MJSubTableViewController alloc] init];
     [self.navigationController pushViewController:spacevc animated:YES];
 }
 

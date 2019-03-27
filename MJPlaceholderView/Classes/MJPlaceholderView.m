@@ -82,9 +82,7 @@
     if (newSuperview) {
         self.scrollView = (UIScrollView *)newSuperview;
         CGFloat topSpace = [self inset].top;
-        [self mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.edges.mas_equalTo(UIEdgeInsetsMake(topSpace + self.headerHeader, 0, 0, 0));
-        }];
+        self.frame = CGRectMake(0, topSpace + _headerHeader, CGRectGetWidth(self.scrollView.bounds), CGRectGetHeight(self.scrollView.bounds));
     }
 }
 
