@@ -100,9 +100,7 @@
     [self addSubview:self.goButton];
     
     [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(self.mas_left);
-        make.right.mas_equalTo(self.mas_right);
-        make.height.mas_equalTo(150);
+        make.centerX.mas_equalTo(self.mas_centerX);
         make.top.mas_equalTo(self.mas_top).mas_offset(100);
     }];
     
