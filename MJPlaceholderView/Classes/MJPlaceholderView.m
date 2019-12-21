@@ -28,7 +28,7 @@
 
 @property (nonatomic, assign) BOOL isLoading;
 
-@property (nonatomic, strong) UIScrollView * scrollView;
+@property (nonatomic, weak) UIScrollView * scrollView;
 @end
 
 @implementation MJPlaceholderView
