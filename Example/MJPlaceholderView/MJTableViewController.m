@@ -10,6 +10,7 @@
 #import "MJPlaceholder.h"
 #import "MJSubTableViewController.h"
 #import "MJSpaceTableViewController.h"
+#import <MJRefresh.h>
 
 @interface MJTableViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -23,12 +24,23 @@
     [super viewWillAppear:animated];
     _sections = 3;
     self.tableView.placeholderView = [MJPlaceholderView placeholder];
-//    [self.tableView.placeholderView placeholderStartLoading];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        _sections = 0;
-//        [self.tableView.placeholderView placeholderEndLoading];
-        [self.tableView reloadData];
-    });
+    __weak typeof(self) wself = self;
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        //模拟网络请求
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            if (wself.sections == 0) {
+                wself.sections = 2;
+            }else {
+               wself.sections = 0;
+            }
+            [wself.tableView reloadData];
+            [wself.tableView.mj_header endRefreshing];
+        });
+    }];
+    
+    [self.tableView.placeholderView setDidSelectButtonPlaceholderViewBlock:^(MJPlaceholderView * _Nonnull placeholderView) {
+        [wself.tableView.mj_header beginRefreshing];
+    }];
 }
 
 - (void)viewDidLoad {

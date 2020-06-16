@@ -7,9 +7,9 @@
 //
 
 #import "MJPlaceholderView.h"
-#import <Masonry/Masonry.h>
-#import <YYImage/YYImage.h>
-#import <AFNetworking/AFNetworking.h>
+#import "Masonry.h"
+#import "YYImage.h"
+#import "AFNetworking.h"
 #import "CTMediator.h"
 
 #define MJPlaceholder_SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width

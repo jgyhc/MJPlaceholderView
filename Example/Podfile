@@ -1,13 +1,13 @@
 use_frameworks!
-
+source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '8.0'
 
 target 'MJPlaceholderView_Example' do
   pod 'MJPlaceholderView', :path => '../'
-
+  pod 'MJRefresh'
   target 'MJPlaceholderView_Tests' do
     inherit! :search_paths
 
-    pod 'FBSnapshotTestCase'
+#    pod 'FBSnapshotTestCase'
   end
 end
