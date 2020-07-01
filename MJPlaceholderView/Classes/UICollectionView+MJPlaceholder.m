@@ -26,8 +26,9 @@ static NSString *placeholderViewKey = @"placeholderViewKey";
         };
         for (NSInteger i = 0; i < 3; i ++) {
             SEL selector = selectors[i];
+            __weak typeof(self) wself = self;
             [self aspect_hookSelector:selector withOptions:AspectPositionAfter usingBlock:^{
-                [self mj_logicalProcessing];
+                [wself mj_logicalProcessing];
             } error:nil];
         }
         [self mj_logicalProcessing];
