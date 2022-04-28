@@ -17,7 +17,7 @@ PODS:
   - Aspects (1.4.1)
   - CTMediator (32)
   - Masonry (1.1.0)
-  - MJPlaceholderView (1.5.9):
+  - MJPlaceholderView (1.5.12):
     - AFNetworking
     - Aspects
     - CTMediator
@@ -50,10 +50,10 @@ SPEC CHECKSUMS:
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   CTMediator: 10f2c387be0ab2061b75b88c86f9903eedba1ce8
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  MJPlaceholderView: c0da0eea733a4795238ff3a636553424b6c2bb0a
+  MJPlaceholderView: 9f0c1353b6acaa7a6c17f775a9b66239d314fca9
   MJRefresh: 53e3e3219f204425ee6d3e62e8733d3295944cd6
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
 
 PODFILE CHECKSUM: 36a02aeb4ded33eb9eb92880e44a2e1897e5483c
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.1
